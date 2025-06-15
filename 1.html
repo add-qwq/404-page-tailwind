@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--请勿在未经允许的情况下使用该页面的代码-->
+<!--该页面版权归Rockaz.top的开发者所有-->
+<!--此页代码已开源至GitHub，受到开源协议保护-->
+<!--我们建议，如果你需要此页代码，请到GitHub页下载，并且在Apache-2.0 许可证的规则下使用，而不是偷-->
+<!--
+    本页GitHub仓库：https://github.com/add-qwq/404-page-tailwind
+-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#0CBABA',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                        accent: '#FF6B6B'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .animate-float {
+                animation: float 3s ease-in-out infinite;
+            }
+            .animate-pulse-slow {
+                animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+    <style>
+        .decorative-circle {
+            max-width: 90vw;
+            max-height: 90vw;
+        }
+
+        @media (max-width: 480px) {
+            .btn-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .btn-container a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-light to-gray-100 font-inter text-dark flex flex-col items-center justify-center p-4 overflow-x-hidden">
+    <div class="relative w-full max-w-6xl mx-auto px-4">
+
+        <div class="absolute -top-40 -right-40 decorative-circle bg-primary/5 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 decorative-circle bg-secondary/5 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10 text-center">
+            <div class="text-[clamp(8rem,20vw,15rem)] font-bold mb-16 opacity-40 text-primary">
+                404
+            </div>
+            
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="w-20 h-20 bg-primary/10 rounded-lg animate-float border border-primary/20" style="animation-delay: 0s"></div>
+                    <div class="w-20 h-20 bg-primary/20 rounded-lg animate-float border border-primary/30" style="animation-delay: 0.5s"></div>
+                    <div class="w-20 h-20 bg-primary/30 rounded-lg animate-float border border-primary/40" style="animation-delay: 1s"></div>
+                </div>
+            </div>
+            
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-shadow">页面失踪了</h1>
+            <p class="text-[clamp(1.2rem,3vw,1.8rem)] text-gray-600 mb-10 max-w-2xl mx-auto">我们找不到您请求的页面，可能是被小屿风吃掉了</p>
+
+            <div class="flex flex-wrap justify-center gap-4 btn-container">
+                <a href="/" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-medium rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                    <i class="fa fa-home mr-2" style="font-size: 19px;"></i>
+                    返回主页
+                </a>
+                <a href="javascript:history.back()" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-medium rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                    <i class="fa fa-arrow-left mr-2" style="font-size: 18px;"></i>
+                    返回上一页
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="mt-auto pt-10 pb-6 text-center text-gray-500 text-sm z-10">
+        <p>©2025 Rock版权所有</p>
+    </footer>
+</body>
+</html>
